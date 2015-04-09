@@ -1,0 +1,59 @@
+div {
+  border: 1px solid black;
+  padding: 5px;
+  width: 640px;
+}
+div div {
+  border: 0;
+  padding: 0;
+}
+.header {
+  width: 640px;
+  background: #ccc;
+}
+.header input{
+  width: 638px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid black;
+  text-align: right;
+}
+
+.numberFields {
+  width: 600px;
+  float: left;
+  box-sizing: border-box;
+  padding: 0;
+}
+.numberFields input {
+  width: 200px;
+  padding: 0;
+  height: 30px;
+  float: left;
+  background-color: #96AB98;
+  border: 1px solid black;
+}
+.numberFields input[name="0"] {
+  width: 100%;
+}
+.operations {
+  width: 40px;
+  float: left;
+}
+.operations input{
+  width: 100%;
+  height: 30px;
+  background-color: #AB96A9;
+  border: 1px solid black;
+}
+.sum {
+  width: 640px;
+  padding: 0;
+  margin-top: 2px;
+}
+.sum input{
+  width: 100%;
+  background-color: #AB96A9;
+  border: 1px solid black;
+  height: 30px;
+}
