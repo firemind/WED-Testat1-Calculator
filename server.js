@@ -24,13 +24,12 @@ serveFile = function(fileName, response){
         if (err != null){
           response.writeHead(500, {"Content-Type": "text/plain"});
           response.write("Error");
-          response.end();
         }else{
           ext = path.extname(fileName);
           response.writeHead(200, {"Content-Type": extensions[ext]});
           response.write(data);
-          response.end();
         }
+        response.end();
       });
     }else{
       response.writeHead(404, {"Content-Type": "text/plain"});
@@ -41,6 +40,7 @@ serveFile = function(fileName, response){
 }
 
 makeCalculation = function(calc){
+  calc = calc.replace("\n", "").replace("\r", "");
   if(calc.match(/^[0-9+-\/\*]*$/)){
     try {
       result = eval(calc);
@@ -67,7 +67,7 @@ http.createServer(function(request, response) {
     });
     request.on('end', function () {
         var post = qs.parse(body);
-        result = makeCalculation(post['calc'], response);
+        result = makeCalculation(post['calc']);
         response.writeHead(200, {"Content-Type":"text/plain" });
         response.write(result);
         response.end();
